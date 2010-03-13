@@ -15,7 +15,10 @@ use Catalyst::Runtime 5.80;
 use Catalyst qw/
     -Debug
     ConfigLoader
+    Redirect
     Static::Simple
+    Compress::Gzip
+    Compress::Deflate
 /;
 
 extends 'Catalyst';

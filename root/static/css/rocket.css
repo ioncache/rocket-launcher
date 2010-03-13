@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+body, p {
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #142818;
+}
+

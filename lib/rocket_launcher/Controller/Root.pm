@@ -4,6 +4,13 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller' }
 
+use Modern::Perl;
+
+use Find::Lib '/Users/mjubenville/rocket_launcher/lib/local';
+
+use Data::Dumper::Concise;
+use RocketBaby;
+
 #
 # Sets the actions in this controller to be registered with no prefix
 # so they function identically to actions created in MyApp.pm
@@ -16,7 +23,7 @@ rocket_launcher::Controller::Root - Root Controller for rocket_launcher
 
 =head1 DESCRIPTION
 
-[enter your description here]
+USB Rocket Launcher web interface
 
 =head1 METHODS
 
@@ -29,8 +36,6 @@ The root page (/)
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    # Hello World
-    $c->response->body( $c->welcome_message );
 }
 
 =head2 default
