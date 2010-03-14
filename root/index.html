@@ -5,15 +5,62 @@
     <title>Rocket Launcher</title>
     <link rel="stylesheet" type="text/css" media="all" href="/static/css/rocket.css" />
     <link rel="stylesheet" type="text/css" media="all" href="/static/css/trontastic/jquery-ui-1.8rc1.custom.css" />
-    
+
     <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery-ui-1.8rc3.custom.min.js"></script>
-    
-    <style type="type/javascript">
+
+    <script type="text/javascript">
+
+        var test = "test";
+
+        $(document).ready(function (e) {
+            $("#command_buttons div").mouseup(function () {
+                rocket_command("stop");
+            });
+
+            $("#command_buttons div").mousedown(function () {
+                rocket_command(this.id);
+            });
+        });
+
+        function rocket_command(command) {
+            $.ajax({
+                type: "GET",
+                url: "/rocket_command/",
+                data: { "command" : command },
+                dataType: "json",
+                cache: "false",
+                beforeSend: function(xhr) {
+                },
+                success: function(content, status) {
         
-    </style>
+                },
+                error: function(xhr, status, error) {
+                    "There was an error with your request.";
+                }
+            });
+        }
+
+    </script>
 </head>
 <body>
-    Testing, testing, 1, 2, 3.
+    <div style="width: 600px; margin-left: auto; margin-right: auto; margin-top: 15px; margin-bottom: 15px; font-size: 30px; font-weight: bold; text-align: center;">Rocket Mayhem</div>
+    <div id="command_buttons" style="width: 600px; margin-left: auto; margin-right: auto;">
+        <div id="up" style="float: left; height: 50px; line-height: 50px; text-align: center; font-size: 24px; width: 600px; cursor: pointer;">
+            UP
+        </div>
+        <div id="left" style="float: left; height: 50px; line-height: 50px; text-align: right; font-size: 24px; width: 200px; cursor: pointer;">
+            LEFT
+        </div>
+        <div id="fire" style="float: left; height: 50px; line-height: 50px; text-align: center; font-size: 24px; width: 200px; cursor: pointer;">
+            FIRE
+        </div>
+        <div id="right" style="float: left; height: 50px; line-height: 50px; text-align: left; font-size: 24px; width: 200px; cursor: pointer;">
+            RIGHT
+        </div>
+        <div id="down" style="float: left; height: 50px; line-height: 50px; text-align: center; font-size: 24px; width: 600px; cursor: pointer;">
+            DOWN
+        </div>
+    </div>
 </body>
 </html>

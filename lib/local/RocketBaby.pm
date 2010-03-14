@@ -40,8 +40,8 @@ sub _cando
 }
 
 my %VAL = (
-    down  => 0x01,
-    up    => 0x02,
+    down  => 0x02,
+    up    => 0x01,
     left  => 0x04,
     right => 0x08,
     fire  => 0x10,

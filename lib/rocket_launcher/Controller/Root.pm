@@ -9,6 +9,7 @@ use Modern::Perl;
 use Find::Lib '/Users/mjubenville/rocket_launcher/lib/local';
 
 use Data::Dumper::Concise;
+use Device::USB;
 use RocketBaby;
 
 #
@@ -35,6 +36,27 @@ The root page (/)
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
+
+    my $usb = Device::USB->new();
+    my $dev = $usb->find_device( 6465, 32801 );
+
+    if(defined $dev) {
+        $self->{rocket} = RocketBaby->new(6465, 32801);
+    }
+
+}
+
+sub rocket_command : Local {
+    my ( $self, $c ) = @_;
+
+    my $command = $c->req->params->{'command'};
+
+    if($self->{rocket}->cando($command)) {
+        $self->{rocket}->do($command);
+    }
+
+    #$c->stash->{current_view} = 'Web::UI::JSON';
+    $c->response->body( "ok" );
 
 }
 
