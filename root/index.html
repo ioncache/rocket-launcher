@@ -8,19 +8,63 @@
 
     <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery-ui-1.8rc3.custom.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.disable.text.select.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.corner.js"></script>
 
     <script type="text/javascript">
 
-        var test = "test";
+        var is_mousedown = false;
 
         $(document).ready(function (e) {
-            $("#command_buttons div").mouseup(function () {
-                rocket_command("stop");
+             // jquery plugin to add a class that disables text selection in various browsers
+            $(".disable_select").disableTextSelect();
+
+            $("body").mousedown(function () {
+                is_mousedown = true;
+            }).mouseup(function () {
+                is_mousedown = false;
             });
 
-            $("#command_buttons div").mousedown(function () {
-                rocket_command(this.id);
+            $("#command_buttons div.command_button").corner("15px");
+
+            $("#command_buttons div.cb").bind({
+                mousedown: function() {
+                    rocket_command(this.id);
+                },
+                mouseup: function() {
+                    rocket_command("stop");
+                },
+                mouseleave: function() {
+                    if(is_mousedown) {
+                        rocket_command("stop");
+                    }
+                },
+                mouseenter: function() {
+                    if(is_mousedown) {
+                        rocket_command(this.id);
+                    }
+                }
             });
+
+            $("#test_num").bind({
+                mousedown: function() {
+                    rocket_command($("#test_value").val());
+                },
+                mouseup: function() {
+                    rocket_command("stop");
+                },
+                mouseleave: function() {
+                    if(is_mousedown) {
+                        rocket_command("stop");
+                    }
+                },
+                mouseenter: function() {
+                    if(is_mousedown) {
+                        rocket_command($("#test_value").val());
+                    }
+                }
+            });
+
         });
 
         function rocket_command(command) {
@@ -44,22 +88,54 @@
     </script>
 </head>
 <body>
-    <div style="width: 600px; margin-left: auto; margin-right: auto; margin-top: 15px; margin-bottom: 15px; font-size: 30px; font-weight: bold; text-align: center;">Rocket Mayhem</div>
-    <div id="command_buttons" style="width: 600px; margin-left: auto; margin-right: auto;">
-        <div id="up" style="float: left; height: 50px; line-height: 50px; text-align: center; font-size: 24px; width: 600px; cursor: pointer;">
-            UP
+
+    <div id="main_container">
+        <div class="sidebar">
+            
         </div>
-        <div id="left" style="float: left; height: 50px; line-height: 50px; text-align: right; font-size: 24px; width: 200px; cursor: pointer;">
-            LEFT
-        </div>
-        <div id="fire" style="float: left; height: 50px; line-height: 50px; text-align: center; font-size: 24px; width: 200px; cursor: pointer;">
-            FIRE
-        </div>
-        <div id="right" style="float: left; height: 50px; line-height: 50px; text-align: left; font-size: 24px; width: 200px; cursor: pointer;">
-            RIGHT
-        </div>
-        <div id="down" style="float: left; height: 50px; line-height: 50px; text-align: center; font-size: 24px; width: 600px; cursor: pointer;">
-            DOWN
+        <div class="title">Rocket Mayhem</div>
+        <div id="command_buttons" class="command_buttons" style="margin-left: auto; margin-right: auto;">
+            <div class="button_row">
+                <div id="5" class="cb command_button disable_select">
+                    UP/LEFT
+                </div>
+                <div id="up"  class="cb command_button disable_select">
+                    UP
+                </div>
+                <div id="9" class="cb command_button disable_select">
+                    UP/RIGHT
+                </div>
+            </div>
+            <div class="button_row">
+                <div id="left" class="cb command_button disable_select">
+                    LEFT
+                </div>
+                <div id="fire" class="cb command_button disable_select">
+                    FIRE
+                </div>
+                <div id="right" class="cb command_button disable_select">
+                    RIGHT
+                </div>
+            </div>
+            <div class="button_row">
+                <div id="6" class="cb command_button disable_select">
+                    DOWN/LEFT
+                </div>
+                <div id="down"  class="cb command_button disable_select">
+                    DOWN
+                </div>
+                <div id="10" class="cb command_button disable_select">
+                    DOWN/RIGHT
+                </div>
+            </div>
+            <div class="button_row">
+                <div class="test_box">
+                     Test value: <input id="test_value" type="text" style="width: 100px; font-size: 18px; height: 30px; text-align: center;" />
+                </div>
+                <div id="test_num" class="command_button disable_select">
+                    TEST
+                </div>
+            </div>
         </div>
     </div>
 </body>

@@ -64,6 +64,11 @@ sub do
     $self->_send($val);
 }
 
+sub test_num {
+    my ($self, $num) = @_;
+    $self->_send($num);
+}
+
 1;
 
 __END__

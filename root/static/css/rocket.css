@@ -7,3 +7,68 @@ body, p {
     color: #142818;
 }
 
+#main_container {
+    width: 918px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.title {
+    float: left;
+    width: 696px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sidebar {
+    float: left;
+    width: 200px;
+    height: 400px;
+    margin-right: 10px;
+    border: 1px solid #142818;
+    padding: 5px;
+}
+
+.command_buttons {
+    float: left;
+    width: 696px;
+}
+
+.button_row {
+    float: left;
+    width: 696px;
+    text-align: center;
+}
+
+.command_button {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    width: 200px;
+    cursor: pointer;
+    border: 1px solid #142818;
+    margin: 10px;
+    padding: 5px;
+}
+
+.command_button:hover {
+    background-color: #BB0000;
+    color: #FFF;
+}
+
+.test_box {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    width: 200px;
+    border: 1px solid #142818;
+    margin: 10px;
+    padding: 5px;
+}
