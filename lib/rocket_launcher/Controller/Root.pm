@@ -58,7 +58,7 @@ sub rocket_command : Local {
             $c->response->body( $self->{rocket}->do($command) );
         } else {
             $c->log->info("Test");
-            $c->response->body( $self->{rocket}->test_num($command) );
+            $c->response->body( $self->{rocket}->test_value($command) );
         }
     } else {
         $self->connect_rocket($c);

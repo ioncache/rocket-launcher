@@ -64,7 +64,7 @@ sub do
     $self->_send($val);
 }
 
-sub test_num {
+sub test_value {
     my ($self, $num) = @_;
     $self->_send($num);
 }
@@ -98,9 +98,13 @@ This provides a basic interface to the toy USB missile launchers produced by Dre
 
 =over 4
 
-=item new ()
+=item new ( vendor_id, product_id)
 
 Creates an instance.
+
+Requires vendor and product id values.
+
+These values may be in integer or decimal format.
 
 =item do ( STRING )
 
@@ -116,6 +120,10 @@ send command string to the launcher.  commands are following:
 =item cando ( STRING )
 
 returns whether the command is executable.
+
+=item test_value ( INTEGER )
+
+sends the the chr() of the integer to the device for testing purposes
 
 =back
 
