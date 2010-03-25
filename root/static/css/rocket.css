@@ -30,6 +30,8 @@ body, p {
     margin-right: 10px;
     border: 1px solid #142818;
     padding: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .sidebar_title {
