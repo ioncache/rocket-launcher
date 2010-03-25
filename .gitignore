@@ -1,3 +1,4 @@
 # folders to ignore
 
 # files to ignore
+.DS_Store

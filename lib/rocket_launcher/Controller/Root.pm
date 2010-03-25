@@ -97,7 +97,7 @@ sub connect_rocket : Private {
     my $dev = $usb->find_device( 6465, 32801 );
 
     if(defined $dev) {
-        $self->{rocket} = RocketBaby->new(6465, 32801);
+        $self->{rocket} = Device::USB::MissileLauncher::RocketBaby->new(6465, 32801);
     }
 
     $c->log->info(Dumper $self->{rocket}->{dev});
