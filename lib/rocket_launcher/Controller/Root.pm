@@ -11,7 +11,7 @@ use Find::Lib '/Users/mjubenville/rocket_launcher/lib/local';
 use Data::Dumper::Concise;
 use Device::USB;
 use Perl6::Junction qw( any );
-use RocketBaby;
+use Device::USB::MissileLauncher::RocketBaby;
 use Time::HiRes qw( sleep );
 
 #

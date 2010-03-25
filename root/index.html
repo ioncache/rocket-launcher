@@ -4,7 +4,7 @@
 <head>
     <title>Rocket Launcher</title>
     <link rel="stylesheet" type="text/css" media="all" href="/static/css/rocket.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="/static/css/trontastic/jquery-ui-1.8rc1.custom.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/trontastic/jquery-ui-1.8rc3.custom.css" />
 
     <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery-ui-1.8rc3.custom.min.js"></script>
@@ -16,10 +16,9 @@
         var is_mousedown = false;
 
         $(document).ready(function (e) {
-             // jquery plugin to add a class that disables text selection in various browsers
             $(".disable_select").disableTextSelect();
 
-            $("body").mousedown(function () {
+            $(document).mousedown(function () {
                 is_mousedown = true;
             }).mouseup(function () {
                 is_mousedown = false;
@@ -29,7 +28,7 @@
 
             $("#command_buttons div.cb").bind({
                 mousedown: function() {
-                    rocket_command(this.id);
+                    rocket_command(this.id.replace("direction_", ""));
                 },
                 mouseup: function() {
                     rocket_command("stop");
@@ -41,7 +40,7 @@
                 },
                 mouseenter: function() {
                     if(is_mousedown) {
-                        rocket_command(this.id);
+                        rocket_command(this.id.replace("direction_", ""));
                     }
                 }
             });
@@ -87,22 +86,22 @@
 
     </script>
 </head>
-<body>
+<body style="width: 100%; height: 100%;">
 
     <div id="main_container">
         <div class="sidebar">
-            
+            Scratchpad
         </div>
         <div class="title">Rocket Mayhem</div>
         <div id="command_buttons" class="command_buttons" style="margin-left: auto; margin-right: auto;">
             <div class="button_row">
-                <div id="5" class="cb command_button disable_select">
+                <div id="direction_5" class="cb command_button disable_select">
                     UP/LEFT
                 </div>
                 <div id="up"  class="cb command_button disable_select">
                     UP
                 </div>
-                <div id="9" class="cb command_button disable_select">
+                <div id="direction_9" class="cb command_button disable_select">
                     UP/RIGHT
                 </div>
             </div>
@@ -118,13 +117,13 @@
                 </div>
             </div>
             <div class="button_row">
-                <div id="6" class="cb command_button disable_select">
+                <div id="direction_6" class="cb command_button disable_select">
                     DOWN/LEFT
                 </div>
                 <div id="down"  class="cb command_button disable_select">
                     DOWN
                 </div>
-                <div id="10" class="cb command_button disable_select">
+                <div id="direction_10" class="cb command_button disable_select">
                     DOWN/RIGHT
                 </div>
             </div>

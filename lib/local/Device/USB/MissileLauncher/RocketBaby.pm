@@ -1,4 +1,4 @@
-package RocketBaby;
+package Device::USB::MissileLauncher::RocketBaby;
 use strict;
 use warnings;
 use Device::USB;
