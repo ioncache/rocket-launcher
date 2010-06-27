@@ -1,13 +1,13 @@
 #!/usr/bin/env perl
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('rocket_launcher', 'CGI');
+Catalyst::ScriptRunner->run('RocketLauncher', 'CGI');
 
 1;
 
 =head1 NAME
 
-rocket_launcher_cgi.pl - Catalyst CGI
+RocketLauncher_cgi.pl - Catalyst CGI
 
 =head1 SYNOPSIS
 

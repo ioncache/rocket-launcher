@@ -6,8 +6,8 @@ use Module::Install::Catalyst; # Complain loudly if you don't have
                                # Catalyst::Devel installed or haven't said
                                # 'make dist' to create a standalone tarball.
 
-name 'rocket_launcher';
-all_from 'lib/rocket_launcher.pm';
+name 'RocketLauncher';
+all_from 'lib/RocketLauncher.pm';
 
 requires 'Catalyst::Runtime' => '5.80021';
 requires 'Catalyst::Plugin::ConfigLoader';

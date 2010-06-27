@@ -5,17 +5,17 @@ BEGIN {
 }
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('rocket_launcher', 'Server');
+Catalyst::ScriptRunner->run('RocketLauncher', 'Server');
 
 1;
 
 =head1 NAME
 
-rocket_launcher_server.pl - Catalyst Test Server
+RocketLauncher_server.pl - Catalyst Test Server
 
 =head1 SYNOPSIS
 
-rocket_launcher_server.pl [options]
+RocketLauncher_server.pl [options]
 
    -d --debug           force debug mode
    -f --fork            handle each request in a new process

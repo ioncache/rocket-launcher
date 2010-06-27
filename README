@@ -1,1 +1,23 @@
+Perhaps slight overkill to use a catalyst application just to control a USB
+rocket launcher. However as I was using Catalyst a lot at the time it was
+easy to setup.
+
+Minor changes were made to the module Device::USB::MissileLauncher::RocketBaby
+to allow passing of a vendor and product id for initialization of the device.
+Also, the values for up and down commands were reversed on the device I have so
+I changed those as well.
+
+These changes should probably be submitted back to the RocketBaby module on
+CPAN, but I wanted to change the module first to allow for multiple profiles
+so that different devices will work with it.
+
+Please feel free to make any changes to the code that you wish.
+
+--------------------------------------------------------------------------------
+
+The 'Scratchpad' section of the web interface is just for making notes on test
+values.  It isn't saved anywhere, just for use while testing.
+
+--------------------------------------------------------------------------------
+
 Run script/rocket_launcher_server.pl to test the application.

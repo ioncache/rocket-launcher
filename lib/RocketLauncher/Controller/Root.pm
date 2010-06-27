@@ -1,4 +1,4 @@
-package rocket_launcher::Controller::Root;
+package RocketLauncher::Controller::Root;
 use Moose;
 use namespace::autoclean;
 
@@ -6,13 +6,12 @@ BEGIN { extends 'Catalyst::Controller' }
 
 use Modern::Perl;
 
-use Find::Lib '/Users/mjubenville/rocket_launcher/lib/local';
+use Find::Lib '../lib/local';
 
 use Data::Dumper::Concise;
 use Device::USB;
 use Perl6::Junction qw( any );
 use Device::USB::MissileLauncher::RocketBaby;
-use Time::HiRes qw( sleep );
 
 #
 # Sets the actions in this controller to be registered with no prefix
@@ -22,7 +21,7 @@ __PACKAGE__->config(namespace => '');
 
 =head1 NAME
 
-rocket_launcher::Controller::Root - Root Controller for rocket_launcher
+RocketLauncher::Controller::Root - Root Controller for RocketLauncher
 
 =head1 DESCRIPTION
 
@@ -35,6 +34,12 @@ USB Rocket Launcher web interface
 The root page (/)
 
 =cut
+
+sub begin : Private {
+
+    my ( $self, $c ) = @_;
+
+}
 
 sub index : Path : Args(0) {
     my ( $self, $c ) = @_;
@@ -100,7 +105,7 @@ sub connect_rocket : Private {
         $self->{rocket} = Device::USB::MissileLauncher::RocketBaby->new(6465, 32801);
     }
 
-    $c->log->info(Dumper $self->{rocket}->{dev});
+    $c->log->info("**********\n" . Dumper $self->{rocket}->{dev});
 
 }
 

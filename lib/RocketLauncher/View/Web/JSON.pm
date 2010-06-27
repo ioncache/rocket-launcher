@@ -1,15 +1,15 @@
-package rocket_launcher::View::Web::JSON;
+package RocketLauncher::View::Web::JSON;
 
 use strict;
 use base 'Catalyst::View::JSON';
 
 =head1 NAME
 
-rocket_launcher:View::Web::JSON - Catalyst JSON View
+RocketLauncher:View::Web::JSON - Catalyst JSON View
 
 =head1 SYNOPSIS
 
-See L<rocket_launcher>
+See L<RocketLauncher>
 
 =head1 DESCRIPTION
 

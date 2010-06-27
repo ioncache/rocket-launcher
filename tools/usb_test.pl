@@ -1,6 +1,6 @@
 #!/home/mjubenville/lcoal/bin/perl
 
-use Find::Lib '/Users/mjubenville/rocket_launcher/lib/local';
+use Find::Lib '/Users/mjubenville/RocketLauncher/lib/local';
 
 use Modern::Perl;
 use Data::Dumper::Concise;

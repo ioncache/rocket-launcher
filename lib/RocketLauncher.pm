@@ -1,4 +1,4 @@
-package rocket_launcher;
+package RocketLauncher;
 use Moose;
 use namespace::autoclean;
 
@@ -23,12 +23,12 @@ use Catalyst qw/
 
 extends 'Catalyst';
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 $VERSION = eval $VERSION;
 
 # Configure the application.
 #
-# Note that settings in rocket_launcher.conf (or other external
+# Note that settings in RocketLauncher.conf (or other external
 # configuration file that you set up manually) take precedence
 # over this when using ConfigLoader. Thus configuration
 # details given here can function as a default configuration,
@@ -36,7 +36,8 @@ $VERSION = eval $VERSION;
 # local deployment.
 
 __PACKAGE__->config(
-    name => 'rocket_launcher',
+    name => 'RocketLauncher',
+    default_view  => 'Web',
     # Disable deprecated behavior needed by old applications
     disable_component_resolution_regex_fallback => 1,
 );
@@ -47,7 +48,7 @@ __PACKAGE__->setup();
 
 =head1 NAME
 
-rocket_launcher - Catalyst based application
+RocketLauncher - Catalyst based application
 
 =head1 SYNOPSIS
 
@@ -59,7 +60,7 @@ rocket_launcher - Catalyst based application
 
 =head1 SEE ALSO
 
-L<rocket_launcher::Controller::Root>, L<Catalyst>
+L<RocketLauncher::Controller::Root>, L<Catalyst>
 
 =head1 AUTHOR
 

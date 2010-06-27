@@ -1,24 +1,24 @@
 #!/usr/bin/env perl
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('rocket_launcher', 'Test');
+Catalyst::ScriptRunner->run('RocketLauncher', 'Test');
 
 1;
 
 =head1 NAME
 
-rocket_launcher_test.pl - Catalyst Test
+RocketLauncher_test.pl - Catalyst Test
 
 =head1 SYNOPSIS
 
-rocket_launcher_test.pl [options] uri
+RocketLauncher_test.pl [options] uri
 
  Options:
    --help    display this help and exits
 
  Examples:
-   rocket_launcher_test.pl http://localhost/some_action
-   rocket_launcher_test.pl /some_action
+   RocketLauncher_test.pl http://localhost/some_action
+   RocketLauncher_test.pl /some_action
 
  See also:
    perldoc Catalyst::Manual

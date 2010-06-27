@@ -1,4 +1,4 @@
-package rocket_launcher::View::Web;
+package RocketLauncher::View::Web;
 
 use strict;
 use warnings;
@@ -12,15 +12,15 @@ __PACKAGE__->config(
 
 =head1 NAME
 
-rocket_launcher::View::Web - TT View for rocket_launcher
+RocketLauncher::View::Web - TT View for RocketLauncher
 
 =head1 DESCRIPTION
 
-TT View for rocket_launcher.
+TT View for RocketLauncher.
 
 =head1 SEE ALSO
 
-L<rocket_launcher>
+L<RocketLauncher>
 
 =head1 AUTHOR
 

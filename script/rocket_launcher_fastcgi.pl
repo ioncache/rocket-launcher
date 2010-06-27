@@ -1,17 +1,17 @@
 #!/usr/bin/env perl
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('rocket_launcher', 'FastCGI');
+Catalyst::ScriptRunner->run('RocketLauncher', 'FastCGI');
 
 1;
 
 =head1 NAME
 
-rocket_launcher_fastcgi.pl - Catalyst FastCGI
+RocketLauncher_fastcgi.pl - Catalyst FastCGI
 
 =head1 SYNOPSIS
 
-rocket_launcher_fastcgi.pl [options]
+RocketLauncher_fastcgi.pl [options]
 
  Options:
    -? -help      display this help and exits

@@ -4,17 +4,17 @@ use strict;
 use warnings;
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('rocket_launcher', 'Create');
+Catalyst::ScriptRunner->run('RocketLauncher', 'Create');
 
 1;
 
 =head1 NAME
 
-rocket_launcher_create.pl - Create a new Catalyst Component
+RocketLauncher_create.pl - Create a new Catalyst Component
 
 =head1 SYNOPSIS
 
-rocket_launcher_create.pl [options] model|view|controller name [helper] [options]
+RocketLauncher_create.pl [options] model|view|controller name [helper] [options]
 
  Options:
    --force        don't create a .new file where a file to be created exists
@@ -22,15 +22,15 @@ rocket_launcher_create.pl [options] model|view|controller name [helper] [options
    --help         display this help and exits
 
  Examples:
-   rocket_launcher_create.pl controller My::Controller
-   rocket_launcher_create.pl -mechanize controller My::Controller
-   rocket_launcher_create.pl view My::View
-   rocket_launcher_create.pl view MyView TT
-   rocket_launcher_create.pl view TT TT
-   rocket_launcher_create.pl model My::Model
-   rocket_launcher_create.pl model SomeDB DBIC::Schema MyApp::Schema create=dynamic\
+   RocketLauncher_create.pl controller My::Controller
+   RocketLauncher_create.pl -mechanize controller My::Controller
+   RocketLauncher_create.pl view My::View
+   RocketLauncher_create.pl view MyView TT
+   RocketLauncher_create.pl view TT TT
+   RocketLauncher_create.pl model My::Model
+   RocketLauncher_create.pl model SomeDB DBIC::Schema MyApp::Schema create=dynamic\
    dbi:SQLite:/tmp/my.db
-   rocket_launcher_create.pl model AnotherDB DBIC::Schema MyApp::Schema create=static\
+   RocketLauncher_create.pl model AnotherDB DBIC::Schema MyApp::Schema create=static\
    dbi:Pg:dbname=foo root 4321
 
  See also:
